@@ -6,4 +6,4 @@
 
 # Visualization
 
-# Credits / Acknowledgements
+# Credits
