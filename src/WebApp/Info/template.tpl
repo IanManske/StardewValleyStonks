@@ -8,12 +8,24 @@
   <link rel="stylesheet" href="../sass/style.sass">
 </head>
 <body>
-  <header>Credits</header>
-  <main></main>
+  <header>Info</header>
+  <main>
+    <nav>
+      $toc$
+    </nav>
+    <div id="content">
+      $body$
+    </div>
+  </main>
   <footer>
-    <span>Stardew Valley v1.5.6 <span style="font-size: 0.8em;">©</span> ConcernedApe</span>
+    <span>Stardew Valley v1.5.6 © ConcernedApe</span>
     <span>Stardew Valley Stonks v0.0.1</span>
-    <span>Source code available on <a href="https://www.github.com/IanManske/StardewValleyStonks">Github</a></span>
+    <span>
+      Source code available on
+      <a href="https://www.github.com/IanManske/StardewValleyStonks" target="_blank" rel="noopener noreferrer">
+        Github
+      </a>
+    </span>
   </footer>
 </body>
 </html>
