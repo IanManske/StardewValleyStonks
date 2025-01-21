@@ -5,44 +5,49 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Pandoc
         uses: r-lib/actions/setup-pandoc@v2
-
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-
+      - name: Set up PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 21
-
-      - name: Install Packages via pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: true
-
-      - name: Build App
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - name: Install NPM packages
+        run: pnpm i
+      - name: Build app
         run: pnpm build
-
-      - name: Deploy to Github Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: gh-pages
-          folder: dist
+          path: dist/
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
