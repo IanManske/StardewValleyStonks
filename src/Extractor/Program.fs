@@ -423,7 +423,7 @@ let main args =
     |> Array.ofSeq
   items |> Array.sortInPlaceBy (snd >> _.Id)
 
-  printfn "Successfully parsed all crops and items. Proced to output the data file and images? [y/N] "
+  printfn "Successfully parsed all crops and items. Proceed to output the data file and images? [y/N] "
 
   let writeImages =
     match System.Console.ReadLine().ToLower() with
