@@ -54,7 +54,7 @@ Put together, the variables should model the following timeline of harvests/crop
   - harvests of a regrow crop for the remaining days/season(s)
 
 All latter seasons in the dateSpan must be covered by bridge harvests or regrow crops as to carry over the fertilizer.
-If this is not possible, then no subproblem is genereated/solved for the given dateSpan.
+If this is not possible, then no subproblem is generated/solved for the given dateSpan.
 
 Taking the sequence of non-overlapping solved subproblems that provide the maximum profit
 yields the final optimal solution for the given game data and settings.

@@ -805,9 +805,9 @@ module private ProfitSummaryCalc =
     seedCostAndQuantity |> Array.sortInPlaceWith (compareBy _.OpportunityCostPerSeed)
     seedCostAndQuantity
 
-  let private partitionQuantitesForSeeds data settings crop seedPrice prices quantites harvests =
+  let private partitionQuantitiesForSeeds data settings crop seedPrice prices quantities harvests =
     let items = Crop.items crop
-    let seedCostAndQuantity = seedCostAndQuantityData data settings crop seedPrice items prices quantites
+    let seedCostAndQuantity = seedCostAndQuantityData data settings crop seedPrice items prices quantities
 
     let quantitiesConsumedForSeeds = items |> Array.map (fun _ -> Array.zeroCreate Quality.count)
     let mutable seedsLeft = float (if Crop.regrows crop then 1u else harvests)
@@ -820,7 +820,7 @@ module private ProfitSummaryCalc =
       i <- i + 1
 
     let quantitiesConsumedForSeeds = quantitiesConsumedForSeeds |> Array.map Qualities.wrap
-    let soldQuantities = (quantites, quantitiesConsumedForSeeds) ||> Array.map2 (Qualities.map2 (-))
+    let soldQuantities = (quantities, quantitiesConsumedForSeeds) ||> Array.map2 (Qualities.map2 (-))
     let quantitiesConsumedForSeeds =
       Array.zip items quantitiesConsumedForSeeds
       |> Array.filter (fun (_, quantities) -> quantities <> Qualities.zero)
@@ -835,7 +835,7 @@ module private ProfitSummaryCalc =
 
     let soldQuantities, quantitiesForSeeds, seedsBought =
       if makeSeeds
-      then partitionQuantitesForSeeds data settings crop seedPrice prices quantities harvests
+      then partitionQuantitiesForSeeds data settings crop seedPrice prices quantities harvests
       else quantities, [||], 0.0
 
     let profit = profitCalc prices soldQuantities

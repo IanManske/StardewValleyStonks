@@ -257,7 +257,7 @@ Put together, a well formed solution must plant crops in the following form/orde
 
 ## Solution
 Stardew Valley Stonks uses an integer [linear programming](https://en.wikipedia.org/wiki/Linear_programming) solver to find the optimal solution.
-This is in contrast to a [dynammic programming](https://en.wikipedia.org/wiki/Dynamic_programming) approach
+This is in contrast to a [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) approach
 which could become more and more unwieldy as the number and types of constraints increase — a situation ripe for bugs.
 By formulating the problem in terms of a linear programming problem,
 the numerous constraints can be described in a more declarative fashion.
@@ -286,7 +286,7 @@ algorithm is used to piece together a sequence of non-overlapping subproblems th
 > - and was not a WebAssembly port of an existing solver (these tend to have large bundle sizes which is not ideal)
 >
 > While the solver linked above is wonderful, its performance, however, was lacking for this use case.
-> That is, the solver should idealy be able solve all subproblems in under 100ms to provide
+> That is, the solver should ideally be able solve all subproblems in under 100ms to provide
 > immediate, interactive feedback to the user which is constantly editing settings.
 > Because of this, I made [my own](https://github.com/IanManske/YALPS) linear programming solver based upon the one linked above.
 > I targeted any low hanging fruit for performance improvement,
