@@ -120,7 +120,7 @@ then the tiles near the edges have less possible ways for giant crops to spawn o
 By finding the number of possible spawning orientations for each tile and taking the average,
 it turns out that the average number of orientations is 3.24 for our 5x5 field example.
 
-![The number of giant crop orientations for each tile on a 5x5 field.](/public/img/Field%20Layouts/Example%20Orientations%20Per%20Tile.png)
+![The number of giant crop orientations for each tile on a 5x5 field.](/public/img/Field%20Layouts/Example%20Orientations%20Per%20Tile.webp)
 
 Doing this same process for your crop field can be tedious,
 since other obstacles in the field like sprinklers and jumino huts block certain spawning locations as well.
@@ -151,7 +151,7 @@ So, you can choose to make a slightly lower estimate to compensate.
   | Infinite                 | 6.00              |
   | 3x3 ring with jumino hut | 2.25              |
 
-  ![A 3x3 ring of iridium sprinklers around a jumino hut.](/public/img/Field%20Layouts/Iridium%20Sprinkler%20Ring%20Around%20Jumino%20Hut.png)
+  ![A 3x3 ring of iridium sprinklers around a jumino hut.](/public/img/Field%20Layouts/Iridium%20Sprinkler%20Ring%20Around%20Jumino%20Hut.webp)
 
 - For a field of iridium sprinklers with pressure nozzles:
 

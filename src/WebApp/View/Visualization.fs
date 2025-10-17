@@ -857,10 +857,10 @@ module Ranker =
             Icon.Path.item (toItem seed), if seedStrategy = BuyFirstSeed then "No seed price" else "No seed source"
 
           if flags.HasFlag Query.InvalidReasons.NotEnoughDays then
-            "img/Time.png", "No harvests possible"
+            "img/Time.webp", "No harvests possible"
 
           if flags.HasFlag Query.InvalidReasons.NoInvestment then
-            "img/Gold.png", "No investment"
+            "img/Gold.webp", "No investment"
         ]
 
         Svg.g [

@@ -12,9 +12,9 @@
 <body>
   <header>
     <a href="https://ianmanske.github.io/StardewValleyStonks/">
-      <div><img src="/public/img/Title/Stardew.png" alt="Stardew"></div>
-      <div><img src="/public/img/Title/Valley.png" alt="Valley"></div>
-      <div><img src="/public/img/Title/Stonks.png" alt="Stonks"></div>
+      <div><img src="/public/img/Title/Stardew.webp" alt="Stardew"></div>
+      <div><img src="/public/img/Title/Valley.webp" alt="Valley"></div>
+      <div><img src="/public/img/Title/Stonks.webp" alt="Stonks"></div>
     </a>
   </header>
   <main id="main">

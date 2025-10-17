@@ -41,7 +41,7 @@ $arrow-length: 1em
 @each $season in Spring Summer Fall Winter
   .#{to-lower-case($season)}
     @extend %season
-    content: url("/public/img/Seasons/#{$season}.png")
+    content: url("/public/img/Seasons/#{$season}.webp")
 
 .icon
   width: 1.5em
@@ -61,7 +61,7 @@ $arrow-length: 1em
 @mixin icon-img($name, $folder, $className: $name)
   .#{to-lower-case($className)}
     @extend .icon
-    content: url("/public/img/#{$folder}/#{$name}.png")
+    content: url("/public/img/#{$folder}/#{$name}.webp")
 
 @each $product in Jam Pickles Wine Juice
   @include icon-img($product, Products)
@@ -76,12 +76,12 @@ $arrow-length: 1em
 @each $skill in Farming Foraging
   .#{to-lower-case($skill)}
     @extend %skill
-    content: url("/public/img/Skills/#{$skill}.png")
+    content: url("/public/img/Skills/#{$skill}.webp")
 
 @mixin quality($quality, $color)
   .#{to-lower-case(#{$quality})}
     --color: #{$color}
-    --img: url("/public/img/Qualities/#{$quality}.png")
+    --img: url("/public/img/Qualities/#{$quality}.webp")
 
 @include quality(Iridium, scale-color(mix(#db67c4, #801fe2), $lightness: 25%))
 @include quality(Gold, mix(#ffff18, #efc90b))

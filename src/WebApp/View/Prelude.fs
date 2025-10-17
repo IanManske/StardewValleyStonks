@@ -67,8 +67,8 @@ open Core.ExtraTopLevelOperators
 [<RequireQualifiedAccess>]
 module Icon =
   module Path =
-    let crop (seed: SeedId) (file: string) = $"img/Crops/{seed}/{file}.png"
-    let at (folder: string) (file: string) = $"img/{folder}/{file}.png"
+    let crop (seed: SeedId) (file: string) = $"img/Crops/{seed}/{file}.webp"
+    let at (folder: string) (file: string) = $"img/{folder}/{file}.webp"
     let fertilizer = at "Fertilizers"
     let item (itemId: ItemId) = itemId |> string |> at "Items"
     let processor = at "Processors"
