@@ -32,7 +32,6 @@ $purple: #ae00ff
 .button
   background: none
   color: black
-  image-rendering: pixelated
   $img-scale: 7
   border-image-source: ui-img(Button)
   border-image-slice: ($img-scale * 2) fill
@@ -45,7 +44,6 @@ $purple: #ae00ff
 $border-box-width: 1rem
 $border-box-outset: $border-box-width * 0.75
 %border-box
-  image-rendering: pixelated
   $img-scale: 4
   border-image-source: ui-img(Border Box)
   border-image-slice: ($img-scale * 4) fill
@@ -58,9 +56,6 @@ $border-box-outset: $border-box-width * 0.75
     border-image-outset: 0
     margin: 0
     padding: $border-box-outset
-
-  & > *
-    image-rendering: initial
 
 %focus-outline
   outline: var(--border-thin) solid #d83700
@@ -102,7 +97,6 @@ body
   & > *
     box-sizing: border-box
     width: 100%
-    image-rendering: initial
 
 $header-padding: 1.5em
 header
