@@ -15,6 +15,7 @@
               pnpm
               pandoc
               dotnet-sdk
+              imagemagick
             ];
             packages = [];
           };
