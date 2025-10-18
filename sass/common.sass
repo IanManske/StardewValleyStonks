@@ -1,3 +1,4 @@
+@use 'sass:color'
 @use 'sass:math'
 
 @font-face
@@ -148,10 +149,10 @@ img
   user-select: none
 
 a
-  color: scale-color($blue, $lightness: -20%)
+  color: color.scale($blue, $lightness: -20%)
 
   &:visited
-    color: scale-color($purple, $lightness: -25%)
+    color: color.scale($purple, $lightness: -25%)
 
   &:focus
     @extend %focus-outline
