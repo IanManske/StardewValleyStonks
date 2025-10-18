@@ -13,7 +13,6 @@ nuget Thoth.Json
 nuget Feliz
 nuget Feliz.CompilerPlugins
 nuget Feliz.Recharts
-nuget Fable.YALPS
 
 nuget Thoth.Json.Net
 nuget MonoGame.Framework.DesktopGL

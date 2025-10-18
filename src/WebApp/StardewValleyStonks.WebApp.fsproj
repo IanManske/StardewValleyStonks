@@ -6,6 +6,7 @@
   <ItemGroup>
     <ProjectReference Include="../Model/StardewValleyStonks.fsproj" />
     <Compile Include="Types.fs" />
+    <Compile Include="YALPS.fs" />
     <Compile Include="Query.fs" />
     <Compile Include="Worker.fs" />
     <Compile Include="Optimizer.fs" />
