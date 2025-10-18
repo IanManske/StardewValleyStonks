@@ -219,23 +219,37 @@ let labeled label element = labelText Class.labelText label element
 let labeledHidden label element = labelText Class.labelHidden label element
 
 
-let [<ReactComponent>] private LazyInit (props: {|
+module private LazyHidden =
+  open Fable.React
+
+  let inline private ofType<'T, 'P, 'S when 'T :> Component<'P, 'S>> (props: 'P) children =
+    ReactBindings.React.createElement(jsConstructor<'T>, props, children)
+
+  type private LazyHiddenProps = {
+    Render: unit -> ReactElement
     Visible: bool
-    Content: unit -> ReactElement
-  |}) =
-  let openedOnce, setOpenedOnce = useState props.Visible
+  }
 
-  if props.Visible && not openedOnce then
-    setOpenedOnce true
+  type private LazyHidden(props) =
+    inherit Component<LazyHiddenProps, obj>(props)
 
-  if openedOnce
-  then props.Content ()
-  else none
+    let mutable rendered = false
 
-let lazyInit visible element = LazyInit {|
-  Visible = visible
-  Content = element
-|}
+    override _.shouldComponentUpdate (next, _) = next.Visible
+
+    override this.render () =
+      rendered <- rendered || this.props.Visible
+      if rendered
+      then this.props.Render ()
+      else none
+
+  let view visible render =
+    ofType<LazyHidden, _, _>
+      {
+        Render = render
+        Visible = visible
+      }
+      []
 
 
 // https://www.w3.org/TR/wai-aria-1.1/#tab
@@ -289,7 +303,7 @@ let [<ReactComponent>] Tabs (props: {|
         div [
           prop.id $"{lowerCase label}-{tab |> Reflection.getCaseName |> lowerCase}"
           if active then className Class.active
-          children (lazyInit active (fun _ -> props.Panel tab))
+          children (LazyHidden.view active (fun () -> props.Panel tab))
         ]
       ))
     ]
@@ -323,5 +337,5 @@ let detailsSection openDetails key summary children dispatch =
   detailsSectionWith openDetails key summary children dispatch
 
 let lazyDetails openDetails key summary children dispatch =
-  detailsSectionWith openDetails key summary (lazyInit (openDetails |> Set.contains key) children) dispatch
+  detailsSectionWith openDetails key summary (LazyHidden.view (openDetails |> Set.contains key) children) dispatch
 
