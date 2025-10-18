@@ -335,7 +335,7 @@ module LocalStorage =
       // something's really wrong if this is the case
       failwith $"Invalid version: {getItem VersionKey}"
 
-    | Some (Some ver) when ver.Major <> App.version.Major ->
+    | Some (Some ver) when ver.Major <> App.version.Major && ver.Major <> 0u ->
       failwith $"Unexpected major version: {ver.Major}"
       // load and convert data here (once next version comes out)
       // console.info $"Upgrading to version {ver.Major}..."
