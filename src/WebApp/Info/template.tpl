@@ -23,8 +23,8 @@
     <a id="top-link" href="#main">Back To Top</a>
   </main>
   <footer>
-    <span>Stardew Valley v1.6.1 © ConcernedApe</span>
-    <span>Stardew Valley Stonks v0.1.4</span>
+    <span>Stardew Valley v1.6.15 © ConcernedApe</span>
+    <span>Stardew Valley Stonks v1.0.0</span>
     <span><a href="/StardewValleyStonks">Home Page</a></span>
     <span>
       Source code available on
