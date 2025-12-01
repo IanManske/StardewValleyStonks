@@ -10,14 +10,13 @@
         let pkgs = import nixpkgs { inherit system; }; in
         {
           devShells.default = with pkgs; mkShell {
-            buildInputs = [
+            packages = [
               nodejs
               pnpm
               pandoc
               dotnet-sdk
               imagemagick
             ];
-            packages = [];
           };
         }
       );
