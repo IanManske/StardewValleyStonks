@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       preact:
-        specifier: ^10.27.2
-        version: 10.27.2
+        specifier: ^10.27.3
+        version: 10.27.3
       react-error-boundary:
         specifier: ^4.0.12
         version: 4.0.12(react@19.2.0)
@@ -1368,8 +1368,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  preact@10.27.2:
-    resolution: {integrity: sha512-5SYSgFKSyhCbk6SrXyMpqjb5+MQBgfvEKE/OC+PujcY34sOpqtr+0AZQtPYx5IA6VxynQ7rUPCtKzyovpj9Bpg==}
+  preact@10.27.3:
+    resolution: {integrity: sha512-ZieIP3zQHiQsNF3BA+SNVS8dcuRIg/nsxlkFbCMBLS2L1Ww4Bkxd9n6Md2A1crfTZsEbQPADV0neYmh/EElgeQ==}
 
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -3309,7 +3309,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  preact@10.27.2: {}
+  preact@10.27.3: {}
 
   prop-types@15.8.1:
     dependencies:

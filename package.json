@@ -25,7 +25,7 @@
     "build-bundle-report": "run-s build:* bundle-report"
   },
   "dependencies": {
-    "preact": "^10.27.2",
+    "preact": "^10.27.3",
     "react-error-boundary": "^4.0.12",
     "recharts": "^2.10.3",
     "yalps": "^0.5.6"
