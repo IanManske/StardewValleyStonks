@@ -301,7 +301,7 @@ In rough order of importance, these are:
 - The Optimizer assumes the limiting factor is energy or farm tiles and **not gold**.
   It is for this reason and others that the Optimizer currently cannot maximize ROI (return on investment).
   The Ranker can provide the ROI for **individual** crops,
-  but not across multiple crops like the Optmizer does for gold or xp.
+  but not across multiple crops like the Optimizer does for gold or xp.
 
   > For example, at the very start of the game, you have little gold but comparatively lots of energy.
   > I'm not a speedrunner, but the goal in this case could be to prioritize ROI and scale up as fast as possible,
